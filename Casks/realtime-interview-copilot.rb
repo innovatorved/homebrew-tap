@@ -1,13 +1,13 @@
 # Synced to github.com/innovatorved/homebrew-tap by CI.
-# `scripts/update-homebrew-cask.js` overwrites version, sha256, and url —
-# artifact filenames use dots (electron-builder/GitHub asset name); the
-# download path segment uses the Git tag (may differ from package.json semver).
+# DMG name must match package.json build.artifactName (URL-safe, no spaces).
+# `scripts/update-homebrew-cask.js` sets version + sha256; the url uses #{version}
+# so the Git tag (v0.x.x) and filename stay aligned with the cask version stanza.
 
 cask "realtime-interview-copilot" do
   version "0.7.0-beta"
-  sha256 "20d6d48b5620b5a49779350ceed959ee3bbff223e1021c2725afc30946b87ca6"
+  sha256 "50aa34198a9f01cc9753d47400a839fe8fdf9651cf6d09428bad8ad376add7c4"
 
-  url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v0.7.0-beta/Realtime%20Interview%20Copilot%20Beta-0.7.0-beta-mac-arm64.dmg",
+  url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
   name "Realtime Interview Copilot Beta"
   desc "Real-time AI copilot for interviews (beta)"
