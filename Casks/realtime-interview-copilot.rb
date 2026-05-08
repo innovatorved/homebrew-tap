@@ -1,35 +1,18 @@
+# Synced to github.com/innovatorved/homebrew-tap by CI.
+# `scripts/update-homebrew-cask.js` overwrites version + sha256 using
+# package.json and the arm64 DMG in release-assets/.
+
 cask "realtime-interview-copilot" do
   version "0.5.0-beta"
-  sha256 "012809904cdafd11f566ab2119bcba9b452151628c677eff0d22ea8ccdfa9477"
+  sha256 "e1610adf73977bdcc0e0b50d55a83c0e7a3619116604cd39b82f050dacbc2ec9"
 
-  url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg"
-  name "Realtime Interview Copilot"
-  desc "Real-time AI copilot for interviews with live transcription and vision Ask AI"
+  url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime%20Interview%20Copilot%20Beta-#{version}-mac-arm64.dmg",
+      verified: "github.com/innovatorved/realtime-interview-copilot/"
+  name "Realtime Interview Copilot Beta"
+  desc "Real-time AI copilot for interviews (beta)"
   homepage "https://github.com/innovatorved/realtime-interview-copilot"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
-  depends_on macos: ">= :big_sur"
   depends_on arch: :arm64
 
   app "Realtime Interview Copilot Beta.app"
-
-  # The app is ad-hoc signed (not notarized). Strip the quarantine attribute
-  # so macOS Gatekeeper does not block it on first launch. Users who want to
-  # verify the binary themselves can inspect the .app before running.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Realtime Interview Copilot Beta.app"],
-                   sudo: false
-  end
-
-  zap trash: [
-    "~/Library/Application Support/Realtime Interview Copilot Beta",
-    "~/Library/Logs/Realtime Interview Copilot Beta",
-    "~/Library/Preferences/com.realtime.interview.copilot.beta.plist",
-    "~/Library/Saved Application State/com.realtime.interview.copilot.beta.savedState",
-  ]
 end
