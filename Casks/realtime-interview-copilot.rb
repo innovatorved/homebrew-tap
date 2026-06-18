@@ -5,8 +5,8 @@
 # The url uses #{version} so the Git tag (v0.x.x) and filename stay aligned.
 
 cask "realtime-interview-copilot" do
-  version "0.9.0-beta"
-  sha256 "2d134cf117fc4e275c77f4eab615e80d05dfcf3c6286f116fd62ddfaeb633f96"
+  version "0.10.0-beta"
+  sha256 "1a41e4e31a0f8fcfd91909899416e40e08405309a61a9c51ae421a654808fff6"
 
   url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
@@ -61,5 +61,7 @@ cask "realtime-interview-copilot" do
     Apple Silicon (arm64) only for now. The app needs Microphone and
     Screen Recording permission (System Settings → Privacy & Security)
     for the live transcription and Ask AI screenshot features.
+
+    To update: `brew update && brew upgrade --cask realtime-interview-copilot`
   EOS
 end
