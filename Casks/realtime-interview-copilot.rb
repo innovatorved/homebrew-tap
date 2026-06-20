@@ -6,7 +6,7 @@
 
 cask "realtime-interview-copilot" do
   version "0.13.0-beta"
-  sha256 "f2bd11fce0e5b19139ad8025c56e50b37b65164bc3b8ec2af311bfb3b21ad995"
+  sha256 "b62b748f80e6a06c03cd8ea3dd3fb4c1feb96fac3038b3483a6b37d0ae6eb074"
 
   url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
