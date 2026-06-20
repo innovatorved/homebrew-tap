@@ -5,8 +5,8 @@
 # The url uses #{version} so the Git tag (v0.x.x) and filename stay aligned.
 
 cask "realtime-interview-copilot" do
-  version "0.13.0-beta"
-  sha256 "b62b748f80e6a06c03cd8ea3dd3fb4c1feb96fac3038b3483a6b37d0ae6eb074"
+  version "0.13.1-beta"
+  sha256 "31ca9b1a907b6d88fed9503b4ac94526768c5352eb2a1c4d914375af14c76347"
 
   url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
