@@ -1,16 +1,11 @@
-# Synced to github.com/innovatorved/homebrew-tap by CI.
-# DMG name must match package.json build.artifactName (URL-safe, no spaces).
-# `scripts/update-homebrew-cask.js` only rewrites the `version` and `sha256`
-# stanzas — keep them on their own lines so the find/replace stays anchored.
-# The url uses #{version} so the Git tag (v0.x.x) and filename stay aligned.
-
+# Synced from realtime-interview-copilot release CI via scripts/sync-distribution.js
 cask "realtime-interview-copilot" do
-  version "0.14.2-beta"
-  sha256 "773fbeec59a80a9070b83f4b30637af323c2a39918da61f11b8a51f5d5a2a497"
+  version "0.14.3-beta"
+  sha256 "273ac6e6f0748d4ae213a76f5931e94cbd3becf03901d3550a050ccd3dc9709b"
 
   url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
-  name "Realtime Interview Copilot Beta"
+  name "Meeting Copilot"
   desc "Real-time AI copilot for interviews (beta)"
   homepage "https://github.com/innovatorved/realtime-interview-copilot"
 
@@ -24,14 +19,6 @@ cask "realtime-interview-copilot" do
 
   app "Realtime Interview Copilot Beta.app"
 
-  # The build is currently unsigned (no Apple Developer ID notarisation yet),
-  # so the DMG ships with the `com.apple.quarantine` extended attribute.
-  # Since macOS 14.4 the old "right-click → Open" Gatekeeper bypass is gone,
-  # which is why users were being pushed into System Settings → Privacy &
-  # Security → "Open Anyway" before the app would launch. Stripping the
-  # quarantine attr in `postflight` lets the cask-installed app open with a
-  # single click, mirroring the UX of a signed/notarised cask.
-  # Once the build is signed + notarised this block can be removed.
   postflight do
     system_command "/usr/bin/xattr",
                    args:  ["-dr", "com.apple.quarantine",
@@ -50,17 +37,14 @@ cask "realtime-interview-copilot" do
   ]
 
   caveats <<~EOS
-    Realtime Interview Copilot Beta is distributed unsigned (no Apple
-    Developer ID notarisation yet). This cask clears the macOS quarantine
-    attribute on install so the app launches with one click.
+    Meeting Copilot is distributed unsigned (no Apple Developer ID notarisation yet).
+    This cask clears the macOS quarantine attribute on install so the app launches with one click.
 
     If macOS still blocks it (e.g. after a manual DMG install), run:
 
       xattr -dr com.apple.quarantine "/Applications/Realtime Interview Copilot Beta.app"
 
-    Apple Silicon (arm64) only for now. The app needs Microphone and
-    Screen Recording permission (System Settings → Privacy & Security)
-    for the live transcription and Ask AI screenshot features.
+    Apple Silicon (arm64) only for now.
 
     To update: `brew update && brew upgrade --cask realtime-interview-copilot`
   EOS
