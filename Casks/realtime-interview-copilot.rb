@@ -1,7 +1,7 @@
 # Synced from realtime-interview-copilot release CI via scripts/sync-distribution.js
 cask "realtime-interview-copilot" do
-  version "0.14.3-beta"
-  sha256 "273ac6e6f0748d4ae213a76f5931e94cbd3becf03901d3550a050ccd3dc9709b"
+  version "0.15.0-beta"
+  sha256 "8ffebc732c03c314b36d463dd8bae3453e885626f5ae2c824b96cd3628488dc5"
 
   url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
@@ -17,21 +17,21 @@ cask "realtime-interview-copilot" do
   depends_on arch: :arm64
   depends_on macos: :big_sur
 
-  app "Realtime Interview Copilot Beta.app"
+  app "Meeting Copilot.app"
 
   postflight do
     system_command "/usr/bin/xattr",
                    args:  ["-dr", "com.apple.quarantine",
-                           "#{appdir}/Realtime Interview Copilot Beta.app"],
+                           "#{appdir}/Meeting Copilot.app"],
                    sudo:  false
   end
 
   uninstall quit: "com.realtime.interview.copilot.beta"
 
   zap trash: [
-    "~/Library/Application Support/Realtime Interview Copilot Beta",
+    "~/Library/Application Support/Meeting Copilot",
     "~/Library/Caches/com.realtime.interview.copilot.beta",
-    "~/Library/Logs/Realtime Interview Copilot Beta",
+    "~/Library/Logs/Meeting Copilot",
     "~/Library/Preferences/com.realtime.interview.copilot.beta.plist",
     "~/Library/Saved Application State/com.realtime.interview.copilot.beta.savedState",
   ]
@@ -42,7 +42,7 @@ cask "realtime-interview-copilot" do
 
     If macOS still blocks it (e.g. after a manual DMG install), run:
 
-      xattr -dr com.apple.quarantine "/Applications/Realtime Interview Copilot Beta.app"
+      xattr -dr com.apple.quarantine "/Applications/Meeting Copilot.app"
 
     Apple Silicon (arm64) only for now.
 
