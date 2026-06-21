@@ -1,7 +1,7 @@
 # Synced from realtime-interview-copilot release CI via scripts/sync-distribution.js
 cask "realtime-interview-copilot" do
-  version "0.15.0-beta"
-  sha256 "b6525a3f76545db16df55b3770547bfcd9e8d4d7620a7bdecbc55928d412b7f5"
+  version "0.15.1-beta"
+  sha256 "c50551616cfb45f5d3b9b1b0778272e6c1d73dd3113b86538e065dd5bb703756"
 
   url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
       verified: "github.com/innovatorved/realtime-interview-copilot/"
