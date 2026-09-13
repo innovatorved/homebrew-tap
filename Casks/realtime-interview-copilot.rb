@@ -3,8 +3,7 @@ cask "realtime-interview-copilot" do
   version "0.16.0"
   sha256 "37103aa5dafabbd79eda3507af9cad86232024a4bd653c24c15efe726f45ec63"
 
-  url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg",
-      verified: "github.com/innovatorved/realtime-interview-copilot/"
+  url "https://github.com/innovatorved/realtime-interview-copilot/releases/download/v#{version}/Realtime.Interview.Copilot.Beta-#{version}-mac-arm64.dmg"
   name "Meeting Copilot"
   desc "Real-time AI copilot for interviews (beta)"
   homepage "https://github.com/innovatorved/realtime-interview-copilot"
@@ -19,11 +18,9 @@ cask "realtime-interview-copilot" do
 
   app "Meeting Copilot.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args:  ["-dr", "com.apple.quarantine",
-                           "#{appdir}/Meeting Copilot.app"],
-                   sudo:  false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Meeting Copilot.app"]
   end
 
   uninstall quit: "com.realtime.interview.copilot.beta"

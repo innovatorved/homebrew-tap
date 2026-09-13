@@ -21,6 +21,23 @@ dev --speak "Hello from SayItDev"
 
 Docs: [github.com/innovatorved/sayitdev](https://github.com/innovatorved/sayitdev)
 
+## Quick start — Meeting Copilot (`realtime-interview-copilot`)
+
+Real-time AI copilot for interviews. Requires **macOS Big Sur+** and **Apple Silicon**.
+
+```bash
+brew tap innovatorved/tap
+brew install --cask realtime-interview-copilot
+```
+
+If an existing app is already installed in `/Applications`:
+
+```bash
+brew install --cask --force realtime-interview-copilot
+```
+
+Docs: [github.com/innovatorved/realtime-interview-copilot](https://github.com/innovatorved/realtime-interview-copilot)
+
 ## Formulae
 
 | Formula | Description |
@@ -38,4 +55,6 @@ Docs: [github.com/innovatorved/sayitdev](https://github.com/innovatorved/sayitde
 ```bash
 brew update
 brew upgrade innovatorved/tap/dev
+brew upgrade --cask realtime-interview-copilot
 ```
+
