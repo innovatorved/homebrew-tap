@@ -1,8 +1,8 @@
 class Dev < Formula
   desc "On-device Apple FoundationModels CLI and OpenAI-compatible server"
   homepage "https://github.com/innovatorved/sayitdev"
-  url "https://github.com/innovatorved/sayitdev/releases/download/v1.0.0/dev-1.0.0-arm64-macos.tar.gz"
-  sha256 "46bf9e23d4351e4799a11528be163f310618f3cb0eb5cbeb0676192b2d5bf7e8"
+  url "https://github.com/innovatorved/sayitdev/releases/download/v1.1.0/dev-1.1.0-arm64-macos.tar.gz"
+  sha256 "a1ee35f1b32e75574149b2b5e44858e6a19924ab5043afdf98e35a2421080b44"
   license "MIT"
 
   depends_on arch: :arm64
