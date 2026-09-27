@@ -38,6 +38,23 @@ brew install --cask --force realtime-interview-copilot
 
 Docs: [github.com/innovatorved/realtime-interview-copilot](https://github.com/innovatorved/realtime-interview-copilot)
 
+## Quick start — SayItFlow (`sayitflow`)
+
+100% on-device push-to-talk voice dictation. Requires **macOS Sonoma+** and **Apple Silicon**.
+
+```bash
+brew tap innovatorved/tap
+brew install --cask sayitflow
+```
+
+If an existing app is already installed in `/Applications`:
+
+```bash
+brew install --cask --force sayitflow
+```
+
+Docs: [github.com/innovatorved/sayItflow](https://github.com/innovatorved/sayItflow)
+
 ## Formulae
 
 | Formula | Description |
@@ -49,6 +66,7 @@ Docs: [github.com/innovatorved/realtime-interview-copilot](https://github.com/in
 | Cask | Description |
 |------|-------------|
 | `realtime-interview-copilot` | Real-time interview copilot app |
+| `sayitflow` | 100% on-device push-to-talk voice dictation for macOS |
 
 ## Upgrade
 
@@ -56,5 +74,6 @@ Docs: [github.com/innovatorved/realtime-interview-copilot](https://github.com/in
 brew update
 brew upgrade innovatorved/tap/dev
 brew upgrade --cask realtime-interview-copilot
+brew upgrade --cask sayitflow
 ```
 
