@@ -1,4 +1,4 @@
-# Synced from sayItflow release CI via scripts/sync-distribution.js
+# Synced from sayItflow release CI via scripts/sync-cask.js
 cask "sayitflow" do
   version "1.3.0"
   sha256 "a135c49e94f836e7ed7ab41707de95d1efd27af333483a00aba355eb066d98d8"
