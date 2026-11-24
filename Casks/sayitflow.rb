@@ -1,7 +1,7 @@
 # Synced from sayItflow release CI via scripts/sync-cask.js
 cask "sayitflow" do
-  version "1.7.1"
-  sha256 "feb16c319ba0ea41adf51deb985be78b9db1d25a5cfda1b9289797c940494117"
+  version "1.7.2"
+  sha256 "5022814e7393b97798345963be629b48315e62e66fc03b963e0d71e9eeb3d48a"
 
   url "https://github.com/innovatorved/sayItflow/releases/download/v#{version}/SayItFlow.dmg"
   name "SayItFlow"
